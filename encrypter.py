@@ -15,14 +15,12 @@ file_name = sys.argv[1]
 try:
     with open(file_name, "rb") as file:
         file_data = file.read()
+        file.close()
     print("Arquivo lido com sucesso!")
 except FileNotFoundError:
     print(f"Erro: O arquivo '{file_name}' não foi encontrado.")
 except Exception as e:
     print(f"Erro ao ler o arquivo: {e}")
-file = open(file_name, "rb")
-file_data = file.read()
-file.close()
 
 ## remover o arquivo
 os.remove(file_name)
